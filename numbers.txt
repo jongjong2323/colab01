@@ -1,0 +1,233 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "mount_file_id": "1kndxt5VZqd83RTbF4bhUl0Ga72HenXUj",
+      "authorship_tag": "ABX9TyMZUh4pui0lVOgbdHw3QKEk",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jongjong2323/colab01/blob/main/numbers.txt\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mKIUqEGGpxtq",
+        "outputId": "a4dfab94-9bc0-456e-936b-acd56ee9d0f7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5050\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1부터 100까지의 숫자를 파일에 저장합니다.\n",
+        "with open('numbers.txt', 'w') as file:\n",
+        "    for i in range(1, 101):\n",
+        "        file.write(str(i) + '\\n')\n",
+        "\n",
+        "# 파일에서 숫자를 읽어와 1부터 10000까지의 합을 구합니다.\n",
+        "total = 0\n",
+        "with open('numbers.txt', 'r') as file:\n",
+        "    for line in file:\n",
+        "        number = int(line.strip())\n",
+        "        if number <= 10000:\n",
+        "            total += number\n",
+        "\n",
+        "# 결과를 출력합니다.\n",
+        "print(total)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "GIT_token = \"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\"\n",
+        "GIT_username = \"jongjong2323\"\n",
+        "GIT_repo = \"colab01\"\n",
+        "GIT_path = \"https://\" + GIT_token + \"@github.com/\" + GIT_username + \"/\" + GIT_repo + \".git\"\n",
+        "print(GIT_path)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "adW4w6I-qsAj",
+        "outputId": "5329e798-8b4d-4a5e-915a-640276b9e4ee"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "https://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@github.com/jongjong2323/colab01.git\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from os.path import join \n",
+        "\n",
+        "PROJ_path = \"/content/drive/MyDrive/Colab Notebooks/\"\n",
+        "%cd \"{PROJ_path}\"\n",
+        "!git clone \"{GIT_path}\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xemTAxq8tg6k",
+        "outputId": "339a7b24-3a1c-4329-d595-ce1f356eb492"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "/content/drive/MyDrive/Colab Notebooks\n",
+            "Cloning into 'colab01'...\n",
+            "remote: Enumerating objects: 6, done.\u001b[K\n",
+            "remote: Counting objects: 100% (6/6), done.\u001b[K\n",
+            "remote: Compressing objects: 100% (4/4), done.\u001b[K\n",
+            "remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0\u001b[K\n",
+            "Unpacking objects: 100% (6/6), 1.77 KiB | 17.00 KiB/s, done.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "PROJ_path = \"/content/drive/MyDrive/Colab Notebooks/\"\n",
+        "%cd \"{PROJ_path}\"\n",
+        "\n",
+        "with open(\"./colab01/djch_test.ipynb\",\"r\") as f:\n",
+        "  c = f.read()\n",
+        "print(c)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qUtaWcfKvnht",
+        "outputId": "81204513-49b0-444e-e6e1-45a35a247f26"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "/content/drive/MyDrive/Colab Notebooks\n",
+            "{\n",
+            "  \"nbformat\": 4,\n",
+            "  \"nbformat_minor\": 0,\n",
+            "  \"metadata\": {\n",
+            "    \"colab\": {\n",
+            "      \"provenance\": [],\n",
+            "      \"mount_file_id\": \"1kndxt5VZqd83RTbF4bhUl0Ga72HenXUj\",\n",
+            "      \"authorship_tag\": \"ABX9TyMzofoHGWcaeyhHyH3CqOu8\",\n",
+            "      \"include_colab_link\": true\n",
+            "    },\n",
+            "    \"kernelspec\": {\n",
+            "      \"name\": \"python3\",\n",
+            "      \"display_name\": \"Python 3\"\n",
+            "    },\n",
+            "    \"language_info\": {\n",
+            "      \"name\": \"python\"\n",
+            "    }\n",
+            "  },\n",
+            "  \"cells\": [\n",
+            "    {\n",
+            "      \"cell_type\": \"markdown\",\n",
+            "      \"metadata\": {\n",
+            "        \"id\": \"view-in-github\",\n",
+            "        \"colab_type\": \"text\"\n",
+            "      },\n",
+            "      \"source\": [\n",
+            "        \"<a href=\\\"https://colab.research.google.com/github/jongjong2323/colab01/blob/main/djch_test.ipynb\\\" target=\\\"_parent\\\"><img src=\\\"https://colab.research.google.com/assets/colab-badge.svg\\\" alt=\\\"Open In Colab\\\"/></a>\"\n",
+            "      ]\n",
+            "    },\n",
+            "    {\n",
+            "      \"cell_type\": \"code\",\n",
+            "      \"execution_count\": 1,\n",
+            "      \"metadata\": {\n",
+            "        \"colab\": {\n",
+            "          \"base_uri\": \"https://localhost:8080/\"\n",
+            "        },\n",
+            "        \"id\": \"mKIUqEGGpxtq\",\n",
+            "        \"outputId\": \"a4dfab94-9bc0-456e-936b-acd56ee9d0f7\"\n",
+            "      },\n",
+            "      \"outputs\": [\n",
+            "        {\n",
+            "          \"output_type\": \"stream\",\n",
+            "          \"name\": \"stdout\",\n",
+            "          \"text\": [\n",
+            "            \"5050\\n\"\n",
+            "          ]\n",
+            "        }\n",
+            "      ],\n",
+            "      \"source\": [\n",
+            "        \"# 1부터 100까지의 숫자를 파일에 저장합니다.\\n\",\n",
+            "        \"with open('numbers.txt', 'w') as file:\\n\",\n",
+            "        \"    for i in range(1, 101):\\n\",\n",
+            "        \"        file.write(str(i) + '\\\\n')\\n\",\n",
+            "        \"\\n\",\n",
+            "        \"# 파일에서 숫자를 읽어와 1부터 10000까지의 합을 구합니다.\\n\",\n",
+            "        \"total = 0\\n\",\n",
+            "        \"with open('numbers.txt', 'r') as file:\\n\",\n",
+            "        \"    for line in file:\\n\",\n",
+            "        \"        number = int(line.strip())\\n\",\n",
+            "        \"        if number <= 10000:\\n\",\n",
+            "        \"            total += number\\n\",\n",
+            "        \"\\n\",\n",
+            "        \"# 결과를 출력합니다.\\n\",\n",
+            "        \"print(total)\\n\"\n",
+            "      ]\n",
+            "    },\n",
+            "    {\n",
+            "      \"cell_type\": \"code\",\n",
+            "      \"source\": [],\n",
+            "      \"metadata\": {\n",
+            "        \"id\": \"adW4w6I-qsAj\"\n",
+            "      },\n",
+            "      \"execution_count\": null,\n",
+            "      \"outputs\": []\n",
+            "    }\n",
+            "  ]\n",
+            "}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
